@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  } 
+  body {
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  .btn-modern {
+    background-color: transparent;
+    color: #084611;
+    border: 2px solid #144021;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    bottom: 10px 10PX;
+  }
+  
+  .btn-modern:hover {
+    background-color: #1a5010;
+    color: white;
+    box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
+  }
+  
+  .btn-modern:active {
+    transform: scale(0.96);
+  }
+  
+  
+  .container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ktaba{
+
+    margin-top:  100px;
+    background-position: center;
+  }
+  /* Left Side */
+  .left-side {
+    flex: 1;
+    background-image: url('ChatGPT\ Image\ 14\ avr.\ 2025\,\ 22_37_18.png');
+    color: rgb(15, 87, 60);
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    background-size: contain left;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;background-size: cover;
+    
+        /* ... الكود القديم ... */
+        animation: slideIn 1s ease-out forwards;
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .left-side h1,
+.left-side p,
+.left-side .small-title {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.left-side .small-title {
+  animation-delay: 0.4s;
+}
+
+.left-side h1 {
+  animation-delay: 0.7s;
+}
+
+.left-side p {
+  animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  
+   
+  
+  .left-side .small-title h4{
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    
+    
+  }
+  
+  .left-side h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .left-side p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  
+  /* Right Side */
+  .right-side {
+    flex: 1;
+    background: #fff;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-side h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+    border-image: linear-gradient( to right, #5fe36e, #197414);
+    border-image-slice: 1;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient( to right, #5fe36e, #197414);
+    border-image-slice: 1;
+  }
+  
+  /* Button */
+  button {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: linear-gradient( to right, #5fe36e, #197414);
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  

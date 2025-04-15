@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login FS Tétouan</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+     <div class="ktaba">  <h1 class="small-title">Site des examens<br>de FS Tétouan</h1>
+       <h5><i>  <p>Connectez-vous pour<br>accéder à vos examens </p></i></h5></div>
+         <div><p>  si tu as conte </p>  <button  class="btn-modern" type="button" id="loginBtn">Se connecter</button></div>
+    </div>
+     
+
+    <div class="right-side">
+      <h2 style="color: darkgreen;">Sign In</h2>
+      <form>
+        <input type="email" placeholder="Email Address" />
+        <input type="password" placeholder="Password" />
+        <input type="text" placeholder="CIN" />
+        <input type="text" placeholder="nemuro d'appoge" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div> <script>
+    const loginBtn = document.getElementById("loginBtn");
+  
+    loginBtn.addEventListener("click", () => {
+      // Add animation class
+      document.body.classList.add("fade-out");
+  
+      // Wait for animation to finish (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = "SIDE PAGE.html"; // change to your target page
+      }, 500);
+    });
+  </script>
+   
+  
+</body>
+</html>
