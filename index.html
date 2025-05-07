@@ -1,129 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login second FS Tétouan</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plateforme d'examen</title>
+  <style>
+    /* Ton CSS ici (intégré depuis ton style précédent) */
+
+    #Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px;
+      background: #f9f9f9;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      height: 40px;
+    }
+
+    .logo {
+      height: 80px;
+      width: 100px;
+    }
+
+    #img-slider {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 100px;
+      background-color: #e8f0e6;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .info {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .info h1 {
+      color: rgb(25, 82, 47);
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .btn-simple {
+      background-color: transparent;
+      color: black;
+      border: 2px solid black;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .btn-simple:hover {
+      background-color: #4b8b3b;
+      color: white;
+    }
+
+    .rounded-box {
+      width: 1000px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    .divider {
+      width: 1px;
+      height: 60px;
+      background-color: #ddd;
+    }
+
+    .section {
+      flex: 1;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+
+    #start-exam {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="left-side">
-     <div class="ktaba">  <h1 class="small-title" ></h1></div>
-           
+  <header id="Header">
+    <img src="blob:https://www.remove.bg/da92c862-060b-4589-b3c0-d5a992e3051c"logo />
+    <nav><i>ESPACE ETUDIANT</i></nav>
+  </header>
+
+  <section id="img-slider">
+    <div class="info">
+      <h1>Bienvenue sur la plateforme d'examen</h1>
+      <h3>Avant de commencer votre examen, veuillez activer la géolocalisation</h3>
+      <button class="btn-simple" onclick="askLocation()">Activer la géolocalisation</button>
+      <button class="btn-simple" id="start-exam">Démarrer l'examen</button>
     </div>
-     
-
-    <div class="right-side"> 
-      <form class="form-style" action="/register" method="POST"> <p style="font-size: large; color: darkgreen;">loge in:</p>
-        <input type="email" name="email" required placeholder="Email">
-        <input type="text" name="nom" required placeholder="Nom">
-        <input type="text" name="prenom" required placeholder="Prénom">
-        <input type="date" name="date_naissance" required>
-        
-        <select class="cc" name="sexe" required>
-          <option value="Homme">Homme</option>
-          <option value="Femme">Femme</option>
-        </select>
-        
-        <input type="text"   name="etablissement" required placeholder="Établissement">
-        <input type="text" name="filiere" required placeholder="Filière">
-        
-        <select class="cc" name="type_utilisateur" required>
-          <option value="etudiant">Étudiant</option>
-          <option value="enseignant">Enseignant</option>
-        </select>
-      <br>
-        <button type="submit">S'inscrire</button>
-      </form>
+    <div class="slide-active">
+      <img src="Illustration 1(1).png" alt="illustration">
     </div>
-        
-   
-    <script>
-      document.querySelector("form").addEventListener("submit", async function (e) {
-        e.preventDefault(); // prevent reload
-    
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-    
-        try {
-          const response = await fetch("http://localhost:3000/register", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          });
-    
-          if (response.ok) {
-            alert("✅ Inscription réussie !");
-            this.reset(); // vider formulaire
-          } else {
-            const err = await response.text();
-            alert("❌ Erreur: " + err);
-          }
-        } catch (error) {
-          alert("❌ Erreur de connexion au serveur.");
-          console.error(error);
-        }
-      });
-      const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+  </section>
 
-// Fonction dyal la connexion
-app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
+  <div class="rounded-box">
+    <div class="section"><img src="user.png" alt=""><br><p>Accès simplifié pour chaque étudiant inscrit.</p></div>
+    <div class="divider"></div>
+    <div class="section"><img src="location.png" alt=""><br><p>Localisation activée pour garantir la sécurité.</p></div>
+    <div class="divider"></div>
+    <div class="section"><img src="Server.png" alt=""><br><p>Stockage sécurisé des résultats et des données.</p></div>
+  </div>
 
-    // Nqraw l'utilisateur mn la base de données
-    const user = await User.findOne({ email });
-    if (!user) {
-        return res.status(400).send("Utilisateur mawjoudch");
-    }
-
-    // Nqraw wach le mot de passe mtaba9 m3a li kayn f la base de données
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-        return res.status(400).send("Mot de passe ghlt");
-    }
-
-    // N générer JWT token
-    const token = jwt.sign(
-        { userId: user._id, role: user.role }, // 'role' ghadi tkoun 'student' ou 'teacher'
-        'secretn_token', // Hadi hiya la clé secrète li ghadi tsigni bih l token
-        { expiresIn: '1h' } // L token kayn expiry dyal 1 sa3a
-    );
-
-    // Nsendi l token l client
-    res.json({ token });
-});
-fetch('/login', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-    }),
-})
-.then(response => response.json())
-.then(data => {
-    if (data.token) {
-        // Storing token dans localStorage pour l'utiliser partout
-        localStorage.setItem('token', data.token);
-
-        // Redirection vers la bonne page selon le rôle
-        if (data.redirect === '/enseignant-dashboard') {
-            window.location.href = 'espace etudient.html';  // Lien vers la page de l'enseignant
-        } else if (data.redirect === '/student-dashboard') {
-            window.location.href = 'espace etudient.html';  // Lien vers la page de l'étudiant
-        }
-    }
-})
-.catch(error => console.error('Erreur:', error));
-
-    </script>
-    
+  <script src="index.js"></script>
 </body>
 </html>
