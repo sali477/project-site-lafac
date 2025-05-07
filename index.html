@@ -3,43 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login FS Tétouan</title>
+  <title>Login second FS Tétouan</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <div class="left-side">
-     <div class="ktaba">  <h1 class="small-title">Site des examens<br>de FS Tétouan</h1>
-       <h5><i>  <p>Connectez-vous pour<br>accéder à vos examens </p></i></h5></div>
-         <div><p>  si tu as conte </p>  <button  class="btn-modern" type="button" id="loginBtn">Se connecter</button></div>
+     <div class="ktaba">  <h1 class="small-title" ></h1></div>
+           
     </div>
      
 
-    <div class="right-side">
-      <h2 style="color: darkgreen;">Sign In</h2>
-      <form>
-        <input type="email" placeholder="Email Address" />
-        <input type="password" placeholder="Password" />
-        <input type="text" placeholder="CIN" />
-        <input type="text" placeholder="nemuro d'appoge" />
-        <button type="submit">Login</button>
+    <div class="right-side"> 
+      <form class="form-style" action="/register" method="POST"> <p style="font-size: large; color: darkgreen;">loge in:</p>
+        <input type="email" name="email" required placeholder="Email">
+        <input type="text" name="nom" required placeholder="Nom">
+        <input type="text" name="prenom" required placeholder="Prénom">
+        <input type="date" name="date_naissance" required>
+        
+        <select class="cc" name="sexe" required>
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+        </select>
+        
+        <input type="text"   name="etablissement" required placeholder="Établissement">
+        <input type="text" name="filiere" required placeholder="Filière">
+        
+        <select class="cc" name="type_utilisateur" required>
+          <option value="etudiant">Étudiant</option>
+          <option value="enseignant">Enseignant</option>
+        </select>
+      <br>
+        <button type="submit">S'inscrire</button>
       </form>
     </div>
-  </div> <script>
-    const loginBtn = document.getElementById("loginBtn");
-  
-    loginBtn.addEventListener("click", () => {
-      // Add animation class
-      document.body.classList.add("fade-out");
-  
-      // Wait for animation to finish (500ms) then redirect
-      setTimeout(() => {
-        window.location.href = "SIDE PAGE.html"; // change to your target page
-      }, 500);
-    });
-  </script>
+        
    
-  
+    <script>
+      document.querySelector("form").addEventListener("submit", async function (e) {
+        e.preventDefault(); // prevent reload
+    
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+    
+        try {
+          const response = await fetch("http://localhost:3000/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+    
+          if (response.ok) {
+            alert("✅ Inscription réussie !");
+            this.reset(); // vider formulaire
+          } else {
+            const err = await response.text();
+            alert("❌ Erreur: " + err);
+          }
+        } catch (error) {
+          alert("❌ Erreur de connexion au serveur.");
+          console.error(error);
+        }
+      });
+      const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
+// Fonction dyal la connexion
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    // Nqraw l'utilisateur mn la base de données
+    const user = await User.findOne({ email });
+    if (!user) {
+        return res.status(400).send("Utilisateur mawjoudch");
+    }
+
+    // Nqraw wach le mot de passe mtaba9 m3a li kayn f la base de données
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+        return res.status(400).send("Mot de passe ghlt");
+    }
+
+    // N générer JWT token
+    const token = jwt.sign(
+        { userId: user._id, role: user.role }, // 'role' ghadi tkoun 'student' ou 'teacher'
+        'secretn_token', // Hadi hiya la clé secrète li ghadi tsigni bih l token
+        { expiresIn: '1h' } // L token kayn expiry dyal 1 sa3a
+    );
+
+    // Nsendi l token l client
+    res.json({ token });
+});
+fetch('/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+    }),
+})
+.then(response => response.json())
+.then(data => {
+    if (data.token) {
+        // Storing token dans localStorage pour l'utiliser partout
+        localStorage.setItem('token', data.token);
+
+        // Redirection vers la bonne page selon le rôle
+        if (data.redirect === '/enseignant-dashboard') {
+            window.location.href = 'espace etudient.html';  // Lien vers la page de l'enseignant
+        } else if (data.redirect === '/student-dashboard') {
+            window.location.href = 'espace etudient.html';  // Lien vers la page de l'étudiant
+        }
+    }
+})
+.catch(error => console.error('Erreur:', error));
+
+    </script>
+    
 </body>
 </html>

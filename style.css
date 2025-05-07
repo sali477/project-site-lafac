@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 5px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
   }
@@ -15,7 +15,17 @@
   body {
     transition: opacity 0.5s ease;
   }
-  
+  .cc{
+     background-color: #cbefcf;
+
+  }
+  #em{
+    margin-bottom: 50PX;
+    padding-left:20PX ;
+    
+    
+    
+  }
   .fade-out {
     opacity: 0;
   }
@@ -59,22 +69,22 @@
     background-position: center;
   }
   /* Left Side */
-  .left-side {
+  .left-side  {
     flex: 1;
-    background-image: url('ChatGPT\ Image\ 14\ avr.\ 2025\,\ 22_37_18.png');
-    color: rgb(15, 87, 60);
-    padding: 2rem;
-    position: relative;
     display: flex;
-    background-size: contain left;
+    background-image: url('Mobile\ login-pana\ 1\(4\).png');
+    color: rgb(15, 87, 60);
+    width: 100px;
+    position: relative;
+    
+    background-size: contain ;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-between;background-size: cover;
+    justify-content: space-between;
+    background-size: cover;
     
         /* ... الكود القديم ... */
-        animation: slideIn 1s ease-out forwards;
-        opacity: 0;
-        transform: translateX(-50px);
+        
       }
       
       @keyframes slideIn {
@@ -132,19 +142,26 @@
   }
   
   /* Right Side */
+   
+
   .right-side {
-    flex: 1;
-    background: #fff;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100PX;
+  margin-bottom: 250PX;
+  background-color: #ffffff;
+  
+
+}
+
   
   .right-side h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1px;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-top: 5px;
   }
   
   form {
@@ -171,7 +188,7 @@
   
   input:focus {
     border-bottom: 2px solid transparent;
-    border-image: linear-gradient( to right, #5fe36e, #197414);
+    border-image: linear-gradient( to right, #5fe36e, #316d2e);
     border-image-slice: 1;
   }
   
@@ -179,7 +196,7 @@
   button {
     padding: 0.75rem 1rem;
     border: none;
-    background: linear-gradient( to right, #5fe36e, #197414);
+    background: linear-gradient( to right, #90c997, #62a160);
     color: white;
     font-size: 1rem;
     border-radius: 8px;
@@ -187,8 +204,111 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: background 0.3s ease;
   }
-  
+  .btnee{
+
+    margin: 5px;
+  }
+  .body{
+top: 100px;
+ ;
+
+
+  }
   button:hover {
     opacity: 0.9;
   }
+  #Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background:#58de90 ;
+    box-shadow:  0 5px 15px rgb(0, 0, 0, 0.6);
+    
+}
+a{
+color: #197414;margin:  30px;
+
+
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+
+list-style: none;
+padding: 0px 20px;
+position: relative;
+}
+#navbar li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none ;
+}
+#navbar li a:hover,
+#navbar li a.acti{
+  color: rgb(36, 148, 148);
+  text-decoration: none ;
+}
+
+#navbar li a:hover::after,
+#navbar li a.acti::after {
+      content:'' ;
+      width:30% ;
+      height: 2px; 
+      background-color:rgb(94, 160, 157) ;
+     position: absolute;
+     bottom: -4px;
+     left: 20px;}
+     .form-style {
+      height:180%;
+        width: 100%;
+        padding: px;
+        
+         
+         
+        font-family: 'Segoe UI', sans-serif;
+      }
+      
+    
+    
+    .form-style input,
+    .form-style select {
+      width: 100%;
+      padding: 5px 5px;
+      margin: px ;
+      
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s ease;
+      margin-top:10PX ;
+      margin-bottom: 5PX;
+      
+    }
+    
+     
+    
+    .form-style button {
+      width: 100%;
+      padding: 15px;
+      background-color: #2c6e4b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      border: seagreen;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 15px;
+    }
+    
+    .form-style button:hover {
+      background-color: #225e3a;
+    }
+    
+     
   

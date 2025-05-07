@@ -1,0 +1,212 @@
+#Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    height: 40px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;
+}
+
+#navbar li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+
+#navbar li a:hover,
+#navbar li a.acti {
+    color: rgb(13, 59, 13);
+    text-decoration: none;
+}
+.logo{
+
+background:none;
+
+
+}
+#navbar li a:hover::after,
+#navbar li a.acti::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background-color: rgb(19, 161, 57);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+ /* Header */
+#Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(248, 250, 246, 0.918);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  #navbar {
+    display: flex;
+    list-style: none;
+  }
+  
+  #navbar li {
+    padding: 0px 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.acti {
+    color: rgb(17, 169, 30);
+  }
+  
+  #navbar li a:hover::after,
+  #navbar li a.acti::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background-color: rgb(16, 165, 34);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+  
+  /* Background section */
+  #img-slider {
+     
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 100px;
+    background-color: #e8f0e6;
+    gap: 40px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    }
+    #img-slider .slide-active  {
+    
+      justify-content: flex-end;
+          
+      flex: 1;  
+          
+          height: 50vh;
+          padding: 20px;
+          
+    }
+          .info  {
+            flex: 1;
+             
+            color: #2a9b5f; 
+            justify-content: flex-start;
+            padding-right: 40px;}
+           
+          
+          #img-slider .info button {
+            padding: 10px 20px;
+            background-color: #4b8b3b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+          }
+          
+          #img-slider .info button:hover {
+            background-color: #1d4013;
+          }
+          
+           
+          
+    
+  
+    .select-none {
+       user-select: none;
+    
+    }
+    #img-slider   .info h1 {
+    
+    color: rgb(25, 82, 47);
+    font-size: 3rem; /* Taille grande */
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    }
+    
+    .btn-simple {
+      background-color: transparent; /* Ma kaynch background color */
+      color: black; /* Texto kaykhdm b color blk */
+      border: 2px solid black; /* Border b color blk */
+      padding: 12px 30px; /* L'espace d'intérieur */
+      font-size: 1rem; /* Font size kayn kbira */
+      font-weight: 600; /* Text li qawi */
+      border-radius: 25px; /* Bghina corners ykounu round */
+      cursor: pointer; /* Katchuf l7oussa dyal mouse */
+      text-align: center; /* Texto fi lwasat */
+      display: inline-block; /* Yb9a ykhdm f inline */
+    }
+    
+    .btn-simple:hover {
+      background-color: transparent; /* Kayb9a transparent f hover */
+      border: 2px solid black; /* Kay9dar ybqa fi border blk */
+      color: black; /* Texto kaybqa blk f hover */
+    }
+    #feature{
+      display: flex;
+      align-items: center;
+      justify-content: space-between ;
+       
+    
+    
+    }
+    #feature .fe-box {
+         width: 250px;
+         height: 200px;
+         text-align: center;
+         padding:15PX 15px ;
+         box-shadow: 20px 20px 34px  rgb(0, 0, 0, 0.3);
+          border:1px solid #cce7d0 ;
+          border-radius: 4px;
+          margin: 30px 60px;
+          cursor: pointer;
+         transition: all 0.3s linear;
+    
+    }
+    #feature .fe-box:hover{
+      box-shadow: 20px 20px 54px  rgb(70, 62, 221, 0.1); 
+    }
+    #feature .fe-box h3   {
+        border: radius 10px ;
+        font-size: large;
+        line-height: normal;
+        height: 15px ;
+        padding: 1px 1px;
+        color:rgb(16, 157, 28) ;
+    }
+    #feature .fe-box p {
+
+color: #103d24;
+
+    }
+     
